@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+    <title>Assignment 36</title>
+</head>
+
+<body>
+    <h1 class="heading">Phone Book</h1>
+    <div class="container">
+        <input type="text" id="search" placeholder="search" class="search" />
+        <button type="button" onclick="search()" class="btn">Search</button>
+    </div>
+    <div>
+        <p id="result" class="result"></p>
+    </div>
+    <script>
+        const contacts = {
+            amol: 7896541230,
+            ajay: 9874563214,
+            ankita: 8523699741,
+            mayur: 789541289,
+            abhishek: 9856321470
+        };
+        function search() {
+            const searchInput = document.getElementById("search");
+            const query = searchInput.value.toLowerCase();
+            const mobile = contacts[query]
+            const result = document.getElementById("result");
+            if (mobile) {
+                result.innerText = `Mobile number of ${query} is ${mobile}`;
+            }
+            else {
+                result.innerText = `Contact not found`;
+            }
+        }
+    </script>
+</body>
+
+</html>
